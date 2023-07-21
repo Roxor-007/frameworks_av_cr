@@ -675,7 +675,8 @@ void CameraService::onTorchStatusChangedLocked(const String8& cameraId,
 static bool hasPermissionsForSystemCamera(int callingPid, int callingUid,
         bool logPermissionFailure = false) {
     return /* checkPermission(sSystemCameraPermission, callingPid, callingUid,
-            sCameraPermission, callingPid, callingUid, logPermissionFailure);
+            logPermissionFailure) && */
+            checkPermission(sCameraPermission, callingPid, callingUid, logPermissionFailure);
 }
 
 Status CameraService::getNumberOfCameras(int32_t type, int32_t* numCameras) {
