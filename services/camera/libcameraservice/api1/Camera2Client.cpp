@@ -62,11 +62,13 @@ Camera2Client::Camera2Client(const sp<CameraService>& cameraService,
         uid_t clientUid,
         int servicePid,
         bool overrideForPerfClass,
+        bool overrideToPortrait,
         bool forceSlowJpegMode):
         Camera2ClientBase(cameraService, cameraClient, clientPackageName,
                 false/*systemNativeClient - since no ndk for api1*/, clientFeatureId,
                 cameraDeviceId, api1CameraId, cameraFacing, sensorOrientation, clientPid,
-                clientUid, servicePid, overrideForPerfClass, /*legacyClient*/ true),
+                clientUid, servicePid, overrideForPerfClass, overrideToPortrait,
+                /*legacyClient*/ true),
         mParameters(api1CameraId, cameraFacing)
 {
     ATRACE_CALL();
